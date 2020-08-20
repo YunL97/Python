@@ -143,6 +143,64 @@ print(mix_list)
 num_list.extend(mix_list)
 print(num_list)
 
+# 사전
+cabinet = {3:"유재석",100:"김태호"}
+print(cabinet[3])
+print(cabinet[100])
+
+#추가
+cabinet[7]="이윤식"
+
+print(cabinet)
+#print(cabinet[5]) 없으면 오류
+print(cabinet.get(5)) #없어도 오류 안남
+print(cabinet.get(5,"사용가능"))
+
+print(3 in cabinet)
+print(5 in cabinet)
+
+#삭제
+del cabinet[3]
+
+print(cabinet)
+
+#키들만 출력
+print(cabinet.keys())
+
+#value만 출력
+print(cabinet.values())
+
+#key,value 쌍으로 출력
+print(cabinet.items())
+
+#전체삭제
+cabinet.clear()
+print(cabinet)
+
+
+#튜플 속도가 리스트보다 빠름
+menu = ("돈까스","치즈까스")
+print(menu[0])
+print(menu[1])
+
+#menu.add 사용불가
+
+# name = "김종국"
+# age= 20
+# hobby = "코딩"
+# print(name,age,hobby)
+
+(name,age,hobby) = ("김종국",20,"코딩")
+print(name,age,hobby)
+
+
+#세트
+
+
+
+
+
+
 
 
 
