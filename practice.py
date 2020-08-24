@@ -194,9 +194,70 @@ print(menu[1])
 print(name,age,hobby)
 
 
-#세트
+#집합 (set)
+#중복 안됨 , 순서 없음
+my_set = {1,2,3,3,3}
+print(my_set)
+
+java = {"유재석", "김태호", "양세형"}
+py= set(["유재석","박명수"])
+
+#교집합 (java와 py을 모두 할 수 있는 개발자)
+print(java & py)
+print(java.intersection(py))
+
+#합집합 (java 할 수 있거나 py 할 수 있는 개발자)
+print(java | py)
+print(java.union(py))
+
+#차집합 (java 할 수 있지만 py 은 할줄 모르는 개발자)
+print(java - py)
+print(java.difference(py))
+
+#py 할 줄 아는 사람이 늘어남
+py.add("김태호")
+print(py)
+
+#java를 까먹음
+java.remove("김태호")
+print(java)
+
+#자료구조의 변경
+menu1 = {"커피","우유","주스"}
+print(menu1)
+print(menu1, type(menu1))
+
+menu1 = list(menu1)
+print(menu1,type(menu1))
+
+menu1 = tuple(menu1)
+print(menu1, type(menu1))
+
+menu1 = set(menu1)
+print(menu , type(menu1))
 
 
+#랜덤2
+lst = [1,2,3,4,5]
+print(lst)
+shuffle(lst)
+print(lst)
+print(sample(lst,1))
+
+users = range(1,21) #1부터 20까지 숫자를 생성
+#print(type(users))
+users = list(users)
+#print(type(users))
+
+print(users)
+shuffle(users)
+print(users)
+
+winners = sample(users,4)
+print("당첨자 발표")
+print("치킨당첨자 : {0}".format(winners[0]))
+print("커피당첨자 : {0}".format(winners[1:]))
+print("축하합니다")
 
 
 
