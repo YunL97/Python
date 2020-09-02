@@ -388,7 +388,57 @@ profile("김태호",25,"코틀린","스위프트","","","")
 
 #지역변수와 전역변수
 
+gun = 10
 
+def checkpoint(soliders): #경계근무
+    global gun # 전역공간에 있는 gun 사용
+    #gun=20
+    gun = gun-soliders
+    print("[함수내]남은 총: {0}".format(gun))
 
+def checkpoint_ret(gun,soldiers):
+    gun = gun-soldiers
+    print("[함수 내]남은 총: {0}".format(gun))
+    return gun
 
+print("전체 총: {0}".format(gun))
+checkpoint(2) #두명이 경계근무 나감
+gun= checkpoint_ret(gun,2)
+print("남은 총: {0}".format(gun))
+
+#표준 입출력
+print("python", "java")
+print("python","java",sep=" vs ", end="?")
+print("무엇이 더 재미있을까요?")
+
+import sys
+print("python","java",file=sys.stdout)
+print("python","java",file=sys.stderr)
+
+#시험성적
+#정렬
+scores = {"수학":0, "영어":50,"코딩":100}
+for subject,score in scores.items():
+    #print(subject,score)
+    print(subject.ljust(8),str(score).rjust(4),sep=":")
+
+#은행 대기순번표
+# 001, 002 ,002 ,...
+for num in range(1,21):
+    print("대기번호 : " +str(num).zfill(3))
+
+answer = input("아무  값이나 입력하세요 : ") #사용자입력은 항상 문자열로 입력
+print(type(answer))
+# print("입력하신 값은 "+answer + "입니다")
+
+#다양한 출력 포멧
+#빈 자리는 빈공간으로 두고, 오른쪽 정렬을 하되, 총 10자리 공간을 확보
+print("{0: >10}".format(500))
+#양수일땐 +로 표시, 음수일 땐 -로 표시
+print("{0: >+10}".format(500))
+print("{0: >+10}".format(-500))
+#왼쪽 정렬하고, 빈칸으로 _채움
+print("{0:_<+10}".format(-500))
+# 3자리마다 콤마를 찍어주기
+print("{0:,}".format(100000000000))
 
