@@ -441,4 +441,69 @@ print("{0: >+10}".format(-500))
 print("{0:_<+10}".format(-500))
 # 3자리마다 콤마를 찍어주기
 print("{0:,}".format(100000000000))
+# 3자리마다 콤마를 찍어주기. +-부호도 붙이기
+print("{0:+,}".format(100000000000))
+print("{0:+,}".format(-100000000000))
+#3자리마다 콤마를 찍어주는데, 부호도 붙이고, 자릿수고 확보하기
+# 빈자리는 ^표시로 채워주기
+print("{0:^<+30,}".format(100000000000))
+#소수점 출력
+print("{0:f}".format(5/3))
+#소수점 특정 자리수 까지만 표시(소수점 3째 자리에서 반올림)
+print("{0:.2f}".format(5/3))
 
+#파일 입출력
+# score_file = open("score.txt","w",encoding="utf8")
+# print("수학 : 0", file=score_file)
+# print("영어 : 50", file=score_file)
+# score_file.close()
+
+#a 이어서씌우기
+# score_file = open("score.txt","a",encoding="utf8")
+# score_file.write("과학은 :80")
+# score_file.write("\n코딩 : 100")
+# score_file.close()
+
+#읽기
+# score_file = open("score.txt","r",encoding="utf8")
+# print(score_file.read())
+# score_file.close()
+
+score_file = open("score.txt","r",encoding="utf8")
+print(score_file.readline())#줄별로 읽기, 한줄 읽고 커서는 다음줄로 이동
+print(score_file.readline())
+score_file.close()
+# while True:
+#     line score_file.readline()
+#     if not lint:
+#         break
+#     print(lint)
+# score_file.close()
+score_file = open("score.txt","r",encoding="utf8")
+lines = score_file.readlines() #리스트 형태로 저장
+for line in lines:
+    print(line, end="")
+score_file.close()
+
+#pickle 프로그램상에서 사용하고 있는 데이터를 파일형태로 저장
+import pickle
+# profile_file = open("profile.pickle","wb")
+# profile = {"이름":"박명수","나이":30,"취미":["축구","골프","코딩"]}
+# print(profile)
+# pickle.dump(profile,profile_file) #profile에 있는 정보를 file에 저장
+# profile_file.close
+
+profile_file = open("profile.pickle","rb")
+profile = pickle.load(profile_file) #file에 있는 정보를 profile 에 불러오기
+print(profile)
+profile_file.close()
+
+#with 조금더 편하게 위와 동일한 작업 가능 다끝나면 close도 됨
+with open("profile.pickle","rb") as profile_file:
+    print(pickle.load(profile_file))
+
+# with open("study.txt","w",encoding="utf8") as study_file:
+#     study_file.write("파이썬을 열심히 공부하고 있어요")
+
+with open("study.txt","r",encoding="utf8") as study_file:
+    print(study_file.read())
