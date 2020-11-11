@@ -690,6 +690,24 @@ except BigNumberError as err:
 finally:
     print("계산기를 이용해주셔서 감사합니다")
 
+#모듈
+# import module 
+# module.price(3) #3명에서 영화보러 갔을때 가격
+# module.price_morning(4)
+# module.price_soldier(5)
+
+# import module as mv # 별명 가능
+# mv.price(3) #3명에서 영화보러 갔을때 가격
+# mv.price_morning(4)
+# mv.price_soldier(5)
+
+# from module import * # 함수 바로 호출 가능
+# price(3) #3명에서 영화보러 갔을때 가격
+# price_morning(4)
+# price_soldier(5)
+
+from module import price, price_morning #가져다 쓸것만 할당 가능
+
 
 
 
