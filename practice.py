@@ -707,8 +707,12 @@ finally:
 # price_soldier(5)
 
 from module import price, price_morning #가져다 쓸것만 할당 가능
+price(5)
 
-
+#패키지
+import travel.thailand
+trip_to = travel.thailand.ThailandPackage()
+trip_to.detail()
 
 
 
